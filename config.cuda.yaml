@@ -1,0 +1,19 @@
+title: Gensim Algo config for Acharya
+owner: Astutic AI
+author: Sajeev Ramakrishnan
+train:
+        cmd: python3 train_spacy_cuda.py
+        type: cmd
+        input: stdin
+        output: stdout
+eval:
+        cmd: python3 parse_input_cuda.py
+        type: cmd
+        input: stdin
+        output: stdout
+vocab:
+        cmd: python3 train_we.py data/vocabulary/sentences.txt
+        type: cmd
+        format: text
+        input: data/vocabulary/
+        output: stdout
