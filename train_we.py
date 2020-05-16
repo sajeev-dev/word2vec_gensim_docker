@@ -137,8 +137,6 @@ else:
 vocabulary_length = len(model.wv.index2word)
 print(f'vocab_len = {vocabulary_length}')
 	
-import pdb
-pdb.set_trace()
 
 
 
