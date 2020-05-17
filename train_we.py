@@ -24,7 +24,7 @@ from datetime import datetime
 from nltk.corpus import words
 
 # Confgurations
-concated_file ="data/concat_file.txt"
+#concated_file ="data/concat_file.txt"
 VOCAB_SIZE = 10000
 sents_fobj_initial_pattern = './data/sentences_list'
 model_fobj_initial_pattern = './data/word2vec_model'
@@ -66,6 +66,9 @@ if filename:
 else:
 	contents = load_file(sys.argv[1])
 	print(f'The file \'{sys.argv[1]}\' has been loaded ')
+
+	# Convert contents to lowercase
+	contents = contents.lower()
 
 	import nltk.data  
 	sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')  
@@ -137,6 +140,6 @@ else:
 vocabulary_length = len(model.wv.index2word)
 print(f'vocab_len = {vocabulary_length}')
 	
-
+model.wv.save_word2vec_format('data/imdb_wordvectors.txt')
 
 
